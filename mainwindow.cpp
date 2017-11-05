@@ -52,32 +52,32 @@ bool MainWindow::eventFilter(QObject *watched, QEvent *event)
             QKeyEvent *newKeyEvent = static_cast<QKeyEvent *>(event);
             switch(newKeyEvent->key())
             {
-            case Qt::Key_Q: if(Mode == Chinese){stringAdd("q");      searchModeSwitch = 0;      IMRefresh(); return true;} else return false;
-            case Qt::Key_W: if(Mode == Chinese){stringAdd("w");      searchModeSwitch = 0;      IMRefresh(); return true;} else return false;
-            case Qt::Key_E: if(Mode == Chinese){stringAdd("e");      searchModeSwitch = 0;      IMRefresh(); return true;} else return false;
-            case Qt::Key_R: if(Mode == Chinese){stringAdd("r");      searchModeSwitch = 0;      IMRefresh(); return true;} else return false;
-            case Qt::Key_T: if(Mode == Chinese){stringAdd("t");      searchModeSwitch = 0;      IMRefresh(); return true;} else return false;
-            case Qt::Key_Y: if(Mode == Chinese){stringAdd("y");      searchModeSwitch = 0;      IMRefresh(); return true;} else return false;
-            case Qt::Key_U: if(Mode == Chinese){stringAdd("u");      searchModeSwitch = 0;      IMRefresh(); return true;} else return false;
-            case Qt::Key_I: if(Mode == Chinese){stringAdd("i");      searchModeSwitch = 0;      IMRefresh(); return true;} else return false;
-            case Qt::Key_O: if(Mode == Chinese){stringAdd("o");      searchModeSwitch = 0;      IMRefresh(); return true;} else return false;
-            case Qt::Key_P: if(Mode == Chinese){stringAdd("p");      searchModeSwitch = 0;      IMRefresh(); return true;} else return false;
-            case Qt::Key_A: if(Mode == Chinese){stringAdd("a");      searchModeSwitch = 0;      IMRefresh(); return true;} else return false;
-            case Qt::Key_S: if(Mode == Chinese){stringAdd("s");      searchModeSwitch = 0;      IMRefresh(); return true;} else return false;
-            case Qt::Key_D: if(Mode == Chinese){stringAdd("d");      searchModeSwitch = 0;      IMRefresh(); return true;} else return false;
-            case Qt::Key_F: if(Mode == Chinese){stringAdd("f");      searchModeSwitch = 0;      IMRefresh(); return true;} else return false;
-            case Qt::Key_G: if(Mode == Chinese){stringAdd("g");      searchModeSwitch = 0;      IMRefresh(); return true;} else return false;
-            case Qt::Key_H: if(Mode == Chinese){stringAdd("h");      searchModeSwitch = 0;      IMRefresh(); return true;} else return false;
-            case Qt::Key_J: if(Mode == Chinese){stringAdd("j");      searchModeSwitch = 0;      IMRefresh(); return true;} else return false;
-            case Qt::Key_K: if(Mode == Chinese){stringAdd("k");      searchModeSwitch = 0;      IMRefresh(); return true;} else return false;
-            case Qt::Key_L: if(Mode == Chinese){stringAdd("l");      searchModeSwitch = 0;      IMRefresh(); return true;} else return false;
-            case Qt::Key_Z: if(Mode == Chinese){stringAdd("z");      searchModeSwitch = 0;      IMRefresh(); return true;} else return false;
-            case Qt::Key_X: if(Mode == Chinese){stringAdd("x");      searchModeSwitch = 0;      IMRefresh(); return true;} else return false;
-            case Qt::Key_C: if(Mode == Chinese){stringAdd("c");      searchModeSwitch = 0;      IMRefresh(); return true;} else return false;
-            case Qt::Key_V: if(Mode == Chinese){stringAdd("v");      searchModeSwitch = 0;      IMRefresh(); return true;} else return false;
-            case Qt::Key_B: if(Mode == Chinese){stringAdd("b");      searchModeSwitch = 0;      IMRefresh(); return true;} else return false;
-            case Qt::Key_N: if(Mode == Chinese){stringAdd("n");      searchModeSwitch = 0;      IMRefresh(); return true;} else return false;
-            case Qt::Key_M: if(Mode == Chinese){stringAdd("m");      searchModeSwitch = 0;      IMRefresh(); return true;} else return false;
+            case Qt::Key_Q: if(Mode == Chinese){stringAdd("q");      searchModeSwitch = 0;      if(!lastTimeInputPY.isEmpty()){lastTimeInputPY.append("q");} IMRefresh(); return true;} else return false;
+            case Qt::Key_W: if(Mode == Chinese){stringAdd("w");      searchModeSwitch = 0;      if(!lastTimeInputPY.isEmpty()){lastTimeInputPY.append("w");}IMRefresh(); return true;} else return false;
+            case Qt::Key_E: if(Mode == Chinese){stringAdd("e");      searchModeSwitch = 0;      if(!lastTimeInputPY.isEmpty()){lastTimeInputPY.append("e");}IMRefresh(); return true;} else return false;
+            case Qt::Key_R: if(Mode == Chinese){stringAdd("r");      searchModeSwitch = 0;      if(!lastTimeInputPY.isEmpty()){lastTimeInputPY.append("r");}IMRefresh(); return true;} else return false;
+            case Qt::Key_T: if(Mode == Chinese){stringAdd("t");      searchModeSwitch = 0;      if(!lastTimeInputPY.isEmpty()){lastTimeInputPY.append("t");}IMRefresh(); return true;} else return false;
+            case Qt::Key_Y: if(Mode == Chinese){stringAdd("y");      searchModeSwitch = 0;      if(!lastTimeInputPY.isEmpty()){lastTimeInputPY.append("y");}IMRefresh(); return true;} else return false;
+            case Qt::Key_U: if(Mode == Chinese){stringAdd("u");      searchModeSwitch = 0;      if(!lastTimeInputPY.isEmpty()){lastTimeInputPY.append("u");}IMRefresh(); return true;} else return false;
+            case Qt::Key_I: if(Mode == Chinese){stringAdd("i");      searchModeSwitch = 0;      if(!lastTimeInputPY.isEmpty()){lastTimeInputPY.append("i");}IMRefresh(); return true;} else return false;
+            case Qt::Key_O: if(Mode == Chinese){stringAdd("o");      searchModeSwitch = 0;      if(!lastTimeInputPY.isEmpty()){lastTimeInputPY.append("o");}IMRefresh(); return true;} else return false;
+            case Qt::Key_P: if(Mode == Chinese){stringAdd("p");      searchModeSwitch = 0;      if(!lastTimeInputPY.isEmpty()){lastTimeInputPY.append("p");}IMRefresh(); return true;} else return false;
+            case Qt::Key_A: if(Mode == Chinese){stringAdd("a");      searchModeSwitch = 0;      if(!lastTimeInputPY.isEmpty()){lastTimeInputPY.append("a");}IMRefresh(); return true;} else return false;
+            case Qt::Key_S: if(Mode == Chinese){stringAdd("s");      searchModeSwitch = 0;      if(!lastTimeInputPY.isEmpty()){lastTimeInputPY.append("s");}IMRefresh(); return true;} else return false;
+            case Qt::Key_D: if(Mode == Chinese){stringAdd("d");      searchModeSwitch = 0;      if(!lastTimeInputPY.isEmpty()){lastTimeInputPY.append("d");}IMRefresh(); return true;} else return false;
+            case Qt::Key_F: if(Mode == Chinese){stringAdd("f");      searchModeSwitch = 0;      if(!lastTimeInputPY.isEmpty()){lastTimeInputPY.append("f");}IMRefresh(); return true;} else return false;
+            case Qt::Key_G: if(Mode == Chinese){stringAdd("g");      searchModeSwitch = 0;      if(!lastTimeInputPY.isEmpty()){lastTimeInputPY.append("g");}IMRefresh(); return true;} else return false;
+            case Qt::Key_H: if(Mode == Chinese){stringAdd("h");      searchModeSwitch = 0;      if(!lastTimeInputPY.isEmpty()){lastTimeInputPY.append("h");}IMRefresh(); return true;} else return false;
+            case Qt::Key_J: if(Mode == Chinese){stringAdd("j");      searchModeSwitch = 0;      if(!lastTimeInputPY.isEmpty()){lastTimeInputPY.append("j");}IMRefresh(); return true;} else return false;
+            case Qt::Key_K: if(Mode == Chinese){stringAdd("k");      searchModeSwitch = 0;      if(!lastTimeInputPY.isEmpty()){lastTimeInputPY.append("k");}IMRefresh(); return true;} else return false;
+            case Qt::Key_L: if(Mode == Chinese){stringAdd("l");      searchModeSwitch = 0;      if(!lastTimeInputPY.isEmpty()){lastTimeInputPY.append("l");}IMRefresh(); return true;} else return false;
+            case Qt::Key_Z: if(Mode == Chinese){stringAdd("z");      searchModeSwitch = 0;      if(!lastTimeInputPY.isEmpty()){lastTimeInputPY.append("z");}IMRefresh(); return true;} else return false;
+            case Qt::Key_X: if(Mode == Chinese){stringAdd("x");      searchModeSwitch = 0;      if(!lastTimeInputPY.isEmpty()){lastTimeInputPY.append("x");}IMRefresh(); return true;} else return false;
+            case Qt::Key_C: if(Mode == Chinese){stringAdd("c");      searchModeSwitch = 0;      if(!lastTimeInputPY.isEmpty()){lastTimeInputPY.append("c");}IMRefresh(); return true;} else return false;
+            case Qt::Key_V: if(Mode == Chinese){stringAdd("v");      searchModeSwitch = 0;      if(!lastTimeInputPY.isEmpty()){lastTimeInputPY.append("v");}IMRefresh(); return true;} else return false;
+            case Qt::Key_B: if(Mode == Chinese){stringAdd("b");      searchModeSwitch = 0;      if(!lastTimeInputPY.isEmpty()){lastTimeInputPY.append("b");}IMRefresh(); return true;} else return false;
+            case Qt::Key_N: if(Mode == Chinese){stringAdd("n");      searchModeSwitch = 0;      if(!lastTimeInputPY.isEmpty()){lastTimeInputPY.append("n");}IMRefresh(); return true;} else return false;
+            case Qt::Key_M: if(Mode == Chinese){stringAdd("m");      searchModeSwitch = 0;      if(!lastTimeInputPY.isEmpty()){lastTimeInputPY.append("m");}IMRefresh(); return true;} else return false;
             case Qt::Key_Shift:
                 if(Mode == Chinese)
                 {
@@ -96,6 +96,8 @@ bool MainWindow::eventFilter(QObject *watched, QEvent *event)
                 }
                 return true;
             case Qt::Key_Backspace:     //糟糕的代码。第一部分可以returnfalse
+                if(!lastTimeInputPY.isEmpty())
+                    lastTimeInputPY.remove(lastTimeInputPY.length()-1,1);
                 if(ui->inputDisplayLabel->text().isEmpty() == true )
                 {
                     cursor = ui->textEdit->textCursor();
@@ -104,7 +106,7 @@ bool MainWindow::eventFilter(QObject *watched, QEvent *event)
                     cursor.deletePreviousChar();//删除光标前的单个字符
                 }
                 else
-                {     
+                {
                     backspace();        //这部分操作较为繁琐且涉及到对private部分的操作，故单独列为函数
                     stringDelete();     //移除待查拼音的末尾字符
                     IMRefresh();
@@ -273,7 +275,6 @@ void MainWindow::IMRefresh(void)
     //根据首字母决定执行的sql语句。建立数据库时按拼音首字母做成了26个table，故需要手动指向对应的table
     switch (searchContent.at(0).unicode()) {
     case 'q':
-        qDebug()<<"q!";
         search = "SELECT * FROM PYlistq WHERE py = '" + searchContent +"' ORDER BY level DESC;";
         break;
     case 'w':
@@ -357,7 +358,7 @@ void MainWindow::IMRefresh(void)
     query.exec(search);
     //先查找全拼对应字词
     while(query.next())
-    {
+    {        
         found_mark = 1;
         temp1 = query.value(0).toString();
         temp2 = query.value(1).toString();
@@ -507,6 +508,7 @@ void MainWindow::IMRefresh(void)
         }
     }
     showChinese();
+    qDebug()<<"hi!";
     qDebug()<<chooseFrequencyList;
 }
 
@@ -552,7 +554,7 @@ void MainWindow::inputChinese(int i)
 {
     QString tempPY = ui->inputDisplayLabel->text();
     QString tempChinese;
-    searchModeSwitch = 1;    
+    searchModeSwitch = 1;
     int j = 1;
     cursor = ui->textEdit->textCursor();
     switch (i) {
@@ -579,6 +581,7 @@ void MainWindow::inputChinese(int i)
     default:
         break;
     }
+    //qDebug()<<"tempchisese is "<<tempChinese;
 
     while(j++ <= choosePYList.at(checkPage*5 - i).length())//从待查全拼strList删去已选择的拼音
         strList.removeFirst();
@@ -681,7 +684,7 @@ void MainWindow::inputChinese(int i)
     /*******************10.12************************/
     //以下部分在用户按下1~5键选择了汉字后唤起，用于从备选拼音和备选汉字列表中删去应该剔除的元素
     QString deletePy = choosePYList.at(checkPage*5 - i);
-    qDebug()<<"removing : "<<deletePy;      //这是用户选择的汉字的全拼，实际删除中还需要删除该全拼的各个子音节所对应的汉字
+    //qDebug()<<"removing : "<<deletePy;      //这是用户选择的汉字的全拼，实际删除中还需要删除该全拼的各个子音节所对应的汉字
     QString deletePy_firstTwoCharacter;     //由于本字库除了元音字（如啊）之外至少要两个字母才能出字，故删去拼音时还要考虑其首二字母
 
     deletePy_firstTwoCharacter.append(deletePy.at(0));
@@ -690,10 +693,10 @@ void MainWindow::inputChinese(int i)
     if(deletePy_firstTwoCharacter.at(0) == 'm' || deletePy_firstTwoCharacter.at(0) == 'n')
         deletePy_firstTwoCharacter.remove(1,1); //解决m和n的问题。由于字库中唯二的非元音却可以出字的字母是mn，故需要单独处理
 
-    qDebug()<<"first two char is "<<deletePy_firstTwoCharacter;
+    //qDebug()<<"first two char is "<<deletePy_firstTwoCharacter;
 
     int remove_last= (choosePYList.lastIndexOf(deletePy) >= choosePYList.lastIndexOf(deletePy_firstTwoCharacter))? choosePYList.lastIndexOf(deletePy):choosePYList.lastIndexOf(deletePy_firstTwoCharacter);
-    qDebug()<<"remove limit: "<<remove_last <<"as total is "<<choosePYList.length();
+    //qDebug()<<"remove limit: "<<remove_last <<"as total is "<<choosePYList.length();
 
     //以上部分，程序寻找用户输入汉字的全拼或首二字母的最后索引，取二者最大值m作为删除的上限，即删除备选拼音、汉字列表的第1~m个。
     for(;remove_last >= 0; remove_last--)
@@ -709,40 +712,150 @@ void MainWindow::inputChinese(int i)
     checkPage = 1;
     showChinese();
     ui->inputDisplayLabel->setText(str);
-    /**********************11.3**********************
-    if(!str.isEmpty())          //这一次拼音输入了词库中没有的词，可能需要添加新词，记录下拼音和汉字
+
+
+    /**********************11.3**********************/
+    int index = 0;
+    if(!str.isEmpty() && inputingNotFinishedSwitch == 0)          //这一次拼音输入了词库中没有的词，可能需要添加新词，记录下拼音和汉字
     {
         inputingNotFinishedSwitch = 1;
         lastTimeInputPY = tempPY;       //记录新词的全拼。当第一次判定为可能需要加新词时，此时tempPY保存的拼音即新词的拼音。
+        lastTimeInputChinese.append(tempChinese);
     }
-    else
+    else if(!str.isEmpty() && inputingNotFinishedSwitch == 1)
     {
-        if(inputingNotFinishedSwitch = 1)//备选拼音列表不再有词且开关被打开过，即此时已完成新词的汉语录入。将新词存入新词链表
+        qDebug()<<"previous lastTime is "<<lastTimeInputChinese;
+        lastTimeInputChinese.append(tempChinese);
+        qDebug()<<"now is "<<lastTimeInputChinese;
+    }
+    else if(str.isEmpty())
+    {
+        if(inputingNotFinishedSwitch == 1)//备选拼音列表不再有词且开关被打开过，即此时已完成新词的汉语录入。将新词存入新词链表
         {
-            int index = personalizeChineseList.indexOf(lastTimeInputChinese);
+            lastTimeInputChinese.append(tempChinese);
+            index = personalizeChineseList.indexOf(lastTimeInputChinese);
             if(index == -1)
             {
                 personalizeChineseList.append(lastTimeInputChinese);
                 personalizePYList.append(lastTimeInputPY);
                 personalizeAppearenceList.append(1);
+                index = 0;
             }
             else
             {
                 qDebug()<<"previous appr is"<<personalizeAppearenceList.at(index);
-                personalizeAppearenceList.at(index)++;
+                personalizeAppearenceList.replace(index,  personalizeAppearenceList.at(index) + 1);
                 qDebug()<<"now appr is"<<personalizeAppearenceList.at(index);
+            }            
+
+            if(personalizeAppearenceList.at(index) >= 3)
+            {
+                QString insertPY = personalizePYList.at(index);
+                QString insertChinese = personalizeChineseList.at(index);
+                QString sql;
+                qDebug()<<insertPY.at(0).unicode();
+                int level = 1000;
+                switch (insertPY.at(0).unicode())
+                {
+                case 'q':
+                    sql = QString("INSERT INTO PYlistq VALUES ('%1','%2','%3')").arg(insertChinese).arg(insertPY).arg(level);
+                    break;
+                case 'w':
+                    sql = QString("INSERT INTO PYlistw VALUES ('%1','%2','%3')").arg(insertChinese).arg(insertPY).arg(level);
+                    break;
+                case 'e':
+                    sql = QString("INSERT INTO PYliste VALUES ('%1','%2','%3')").arg(insertChinese).arg(insertPY).arg(level);
+                    break;
+                case 'r':
+                    sql = QString("INSERT INTO PYlistr VALUES ('%1','%2','%3')").arg(insertChinese).arg(insertPY).arg(level);
+                    break;
+                case 't':
+                    sql = QString("INSERT INTO PYlistt VALUES ('%1','%2','%3')").arg(insertChinese).arg(insertPY).arg(level);
+                    break;
+                case 'y':
+                    sql = QString("INSERT INTO PYlisty VALUES ('%1','%2','%3')").arg(insertChinese).arg(insertPY).arg(level);
+                    break;
+                case 'u':
+                    sql = QString("INSERT INTO PYlistu VALUES ('%1','%2','%3')").arg(insertChinese).arg(insertPY).arg(level);
+                    break;
+                case 'i':
+                    sql = QString("INSERT INTO PYlisti VALUES ('%1','%2','%3')").arg(insertChinese).arg(insertPY).arg(level);
+                    break;
+                case 'o':
+                    sql = QString("INSERT INTO PYlisto VALUES ('%1','%2','%3')").arg(insertChinese).arg(insertPY).arg(level);
+                    break;
+                case 'p':
+                    sql = QString("INSERT INTO PYlistp VALUES ('%1','%2','%3')").arg(insertChinese).arg(insertPY).arg(level);
+                    break;
+                case 'a':
+                    sql = QString("INSERT INTO PYlista VALUES ('%1','%2','%3')").arg(insertChinese).arg(insertPY).arg(level);
+                    break;
+                case 's':
+                    sql = QString("INSERT INTO PYlists VALUES ('%1','%2','%3')").arg(insertChinese).arg(insertPY).arg(level);
+                    break;
+                case 'd':
+                    sql = QString("INSERT INTO PYlistd VALUES ('%1','%2','%3')").arg(insertChinese).arg(insertPY).arg(level);
+                    break;
+                case 'f':
+                    sql = QString("INSERT INTO PYlistf VALUES ('%1','%2','%3')").arg(insertChinese).arg(insertPY).arg(level);
+                    break;
+                case 'g':
+                    sql = QString("INSERT INTO PYlistg VALUES ('%1','%2','%3')").arg(insertChinese).arg(insertPY).arg(level);
+                    break;
+                case 'h':
+                    sql = QString("INSERT INTO PYlisth VALUES ('%1','%2','%3')").arg(insertChinese).arg(insertPY).arg(level);
+                    break;
+                case 'j':
+                    sql = QString("INSERT INTO PYlistj VALUES ('%1','%2','%3')").arg(insertChinese).arg(insertPY).arg(level);
+                    break;
+                case 'k':
+                    sql = QString("INSERT INTO PYlistk VALUES ('%1','%2','%3')").arg(insertChinese).arg(insertPY).arg(level);
+                    break;
+                case 'l':
+                    sql = QString("INSERT INTO PYlistl VALUES ('%1','%2','%3')").arg(insertChinese).arg(insertPY).arg(level);
+                    break;
+                case 'z':
+                    sql = QString("INSERT INTO PYlistz VALUES ('%1','%2','%3')").arg(insertChinese).arg(insertPY).arg(level);
+                    break;
+                case 'x':
+                    sql = QString("INSERT INTO PYlistx VALUES ('%1','%2','%3')").arg(insertChinese).arg(insertPY).arg(level);
+                    break;
+                case 'c':
+                    sql = QString("INSERT INTO PYlistc VALUES ('%1','%2','%3')").arg(insertChinese).arg(insertPY).arg(level);
+                    break;
+                case 'v':
+                    sql = QString("INSERT INTO PYlistv VALUES ('%1','%2','%3')").arg(insertChinese).arg(insertPY).arg(level);
+                    break;
+                case 'b':
+                    sql = QString("INSERT INTO PYlistb VALUES ('%1','%2','%3')").arg(insertChinese).arg(insertPY).arg(level);
+                    break;
+                case 'n':
+                    sql = QString("INSERT INTO PYlistn VALUES ('%1','%2','%3')").arg(insertChinese).arg(insertPY).arg(level);
+                    break;
+                case 'm':
+                    sql = QString("INSERT INTO PYlistm VALUES ('%1','%2','%3')").arg(insertChinese).arg(insertPY).arg(level);
+                    break;
+                default:
+                    break;
+                }
+                qDebug()<<sql;
+
+                personalizePYList.removeAt(index);
+                personalizeChineseList.removeAt(index);
+                personalizeAppearenceList.removeAt(index);
             }
             inputingNotFinishedSwitch = 0;
+            qDebug()<<"adding word:"<<lastTimeInputChinese<<"which pinyin is "<<lastTimeInputPY;
+            lastTimeInputChinese.clear();
+            lastTimeInputPY.clear();
+
         }
         else    //一次到位，输入的词是词库有的词
         {
-
         }
     }
-    if(inputingNotFinishedSwitch)
-    {
-        lastTimeInputChinese.append(tempChinese);
-    }
     /*************************************************/
+
+
     IMRefresh();
 }

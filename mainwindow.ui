@@ -10,13 +10,36 @@
     <height>417</height>
    </rect>
   </property>
+  <property name="minimumSize">
+   <size>
+    <width>799</width>
+    <height>417</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>799</width>
+    <height>417</height>
+   </size>
+  </property>
   <property name="windowTitle">
-   <string>MainWindow</string>
+   <string>输入法演示窗口</string>
+  </property>
+  <property name="windowIcon">
+   <iconset>
+    <normaloff>F:/个性化/710枚白色图标/bdllq.ico</normaloff>F:/个性化/710枚白色图标/bdllq.ico</iconset>
   </property>
   <property name="styleSheet">
-   <string notr="true"/>
+   <string notr="true">#MainWindow{
+	background:url(&quot;background.JPG&quot;);
+}</string>
   </property>
   <widget class="QWidget" name="centralWidget">
+   <property name="styleSheet">
+    <string notr="true">#centralWidget{
+	background:url(&quot;background.jpg&quot;);
+}</string>
+   </property>
    <widget class="QLabel" name="inputDisplayLabel">
     <property name="geometry">
      <rect>
@@ -25,6 +48,14 @@
       <width>501</width>
       <height>41</height>
      </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">#inputDisplayLabel{
+	color:white;
+	font-size:20px;
+	background:rgb(199, 199, 199, 40%);
+	border-radius:10px;
+}</string>
     </property>
     <property name="text">
      <string/>
@@ -39,6 +70,11 @@
       <height>91</height>
      </rect>
     </property>
+    <property name="styleSheet">
+     <string notr="true">#textEdit{
+	border-radius:50px;
+}</string>
+    </property>
    </widget>
    <widget class="QLabel" name="statusLabel">
     <property name="geometry">
@@ -48,6 +84,11 @@
       <width>91</width>
       <height>61</height>
      </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">#statusLabel{
+	color:white;
+}</string>
     </property>
     <property name="text">
      <string>CN</string>
@@ -62,11 +103,16 @@
    <widget class="QLabel" name="capsLock">
     <property name="geometry">
      <rect>
-      <x>590</x>
-      <y>250</y>
+      <x>610</x>
+      <y>240</y>
       <width>91</width>
       <height>61</height>
      </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">#capsLock{
+	color:white;
+}</string>
     </property>
     <property name="text">
      <string>Caps Off</string>
@@ -87,6 +133,14 @@
       <height>41</height>
      </rect>
     </property>
+    <property name="styleSheet">
+     <string notr="true">#wordLabel_1{
+	background:rgb(138,138,138,0%);
+	font-size:25px;
+	border-radius:5px;	
+	color:white;
+}</string>
+    </property>
     <property name="text">
      <string>1.</string>
     </property>
@@ -99,6 +153,14 @@
       <width>91</width>
       <height>41</height>
      </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">#wordLabel_2{
+	background:rgb(138,138,138,0%);
+	font-size:25px;
+	border-radius:5px;	
+	color:white;
+}</string>
     </property>
     <property name="text">
      <string>2.</string>
@@ -113,6 +175,14 @@
       <height>41</height>
      </rect>
     </property>
+    <property name="styleSheet">
+     <string notr="true">#wordLabel_3{
+	background:rgb(138,138,138,0%);
+	font-size:25px;
+	border-radius:5px;	
+	color:white;
+}</string>
+    </property>
     <property name="text">
      <string>3.</string>
     </property>
@@ -125,6 +195,14 @@
       <width>91</width>
       <height>41</height>
      </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">#wordLabel_4{
+	background:rgb(138,138,138,0%);
+	font-size:25px;
+	border-radius:5px;	
+	color:white;
+}</string>
     </property>
     <property name="text">
      <string>4.</string>
@@ -139,6 +217,13 @@
       <height>41</height>
      </rect>
     </property>
+    <property name="styleSheet">
+     <string notr="true">#wordLabel_5{
+	font-size:25px;
+	border-radius:5px;	
+	color:white;
+}</string>
+    </property>
     <property name="text">
      <string>5.</string>
     </property>
@@ -150,7 +235,7 @@
      <x>0</x>
      <y>0</y>
      <width>799</width>
-     <height>25</height>
+     <height>26</height>
     </rect>
    </property>
   </widget>
