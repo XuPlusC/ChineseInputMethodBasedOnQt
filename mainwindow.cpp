@@ -18,6 +18,8 @@ MainWindow::MainWindow(QWidget *parent) :
 
     searchModeSwitch = 0;
     inputingNotFinishedSwitch = 0;
+    associationSwitch = 0;      //初始化所有开关
+
     //数据库初始化部分
     db = QSqlDatabase::addDatabase("QSQLITE");
     db.setDatabaseName("D:\\workspace\\Qt\\fk\\my1.db");//db.setDatabaseName("DatabaseTrial.db");
@@ -52,32 +54,32 @@ bool MainWindow::eventFilter(QObject *watched, QEvent *event)
             QKeyEvent *newKeyEvent = static_cast<QKeyEvent *>(event);
             switch(newKeyEvent->key())
             {
-            case Qt::Key_Q: if(Mode == Chinese){stringAdd("q");      searchModeSwitch = 0;      if(!lastTimeInputPY.isEmpty()){lastTimeInputPY.append("q");} IMRefresh(); return true;} else return false;
-            case Qt::Key_W: if(Mode == Chinese){stringAdd("w");      searchModeSwitch = 0;      if(!lastTimeInputPY.isEmpty()){lastTimeInputPY.append("w");}IMRefresh(); return true;} else return false;
-            case Qt::Key_E: if(Mode == Chinese){stringAdd("e");      searchModeSwitch = 0;      if(!lastTimeInputPY.isEmpty()){lastTimeInputPY.append("e");}IMRefresh(); return true;} else return false;
-            case Qt::Key_R: if(Mode == Chinese){stringAdd("r");      searchModeSwitch = 0;      if(!lastTimeInputPY.isEmpty()){lastTimeInputPY.append("r");}IMRefresh(); return true;} else return false;
-            case Qt::Key_T: if(Mode == Chinese){stringAdd("t");      searchModeSwitch = 0;      if(!lastTimeInputPY.isEmpty()){lastTimeInputPY.append("t");}IMRefresh(); return true;} else return false;
-            case Qt::Key_Y: if(Mode == Chinese){stringAdd("y");      searchModeSwitch = 0;      if(!lastTimeInputPY.isEmpty()){lastTimeInputPY.append("y");}IMRefresh(); return true;} else return false;
-            case Qt::Key_U: if(Mode == Chinese){stringAdd("u");      searchModeSwitch = 0;      if(!lastTimeInputPY.isEmpty()){lastTimeInputPY.append("u");}IMRefresh(); return true;} else return false;
-            case Qt::Key_I: if(Mode == Chinese){stringAdd("i");      searchModeSwitch = 0;      if(!lastTimeInputPY.isEmpty()){lastTimeInputPY.append("i");}IMRefresh(); return true;} else return false;
-            case Qt::Key_O: if(Mode == Chinese){stringAdd("o");      searchModeSwitch = 0;      if(!lastTimeInputPY.isEmpty()){lastTimeInputPY.append("o");}IMRefresh(); return true;} else return false;
-            case Qt::Key_P: if(Mode == Chinese){stringAdd("p");      searchModeSwitch = 0;      if(!lastTimeInputPY.isEmpty()){lastTimeInputPY.append("p");}IMRefresh(); return true;} else return false;
-            case Qt::Key_A: if(Mode == Chinese){stringAdd("a");      searchModeSwitch = 0;      if(!lastTimeInputPY.isEmpty()){lastTimeInputPY.append("a");}IMRefresh(); return true;} else return false;
-            case Qt::Key_S: if(Mode == Chinese){stringAdd("s");      searchModeSwitch = 0;      if(!lastTimeInputPY.isEmpty()){lastTimeInputPY.append("s");}IMRefresh(); return true;} else return false;
-            case Qt::Key_D: if(Mode == Chinese){stringAdd("d");      searchModeSwitch = 0;      if(!lastTimeInputPY.isEmpty()){lastTimeInputPY.append("d");}IMRefresh(); return true;} else return false;
-            case Qt::Key_F: if(Mode == Chinese){stringAdd("f");      searchModeSwitch = 0;      if(!lastTimeInputPY.isEmpty()){lastTimeInputPY.append("f");}IMRefresh(); return true;} else return false;
-            case Qt::Key_G: if(Mode == Chinese){stringAdd("g");      searchModeSwitch = 0;      if(!lastTimeInputPY.isEmpty()){lastTimeInputPY.append("g");}IMRefresh(); return true;} else return false;
-            case Qt::Key_H: if(Mode == Chinese){stringAdd("h");      searchModeSwitch = 0;      if(!lastTimeInputPY.isEmpty()){lastTimeInputPY.append("h");}IMRefresh(); return true;} else return false;
-            case Qt::Key_J: if(Mode == Chinese){stringAdd("j");      searchModeSwitch = 0;      if(!lastTimeInputPY.isEmpty()){lastTimeInputPY.append("j");}IMRefresh(); return true;} else return false;
-            case Qt::Key_K: if(Mode == Chinese){stringAdd("k");      searchModeSwitch = 0;      if(!lastTimeInputPY.isEmpty()){lastTimeInputPY.append("k");}IMRefresh(); return true;} else return false;
-            case Qt::Key_L: if(Mode == Chinese){stringAdd("l");      searchModeSwitch = 0;      if(!lastTimeInputPY.isEmpty()){lastTimeInputPY.append("l");}IMRefresh(); return true;} else return false;
-            case Qt::Key_Z: if(Mode == Chinese){stringAdd("z");      searchModeSwitch = 0;      if(!lastTimeInputPY.isEmpty()){lastTimeInputPY.append("z");}IMRefresh(); return true;} else return false;
-            case Qt::Key_X: if(Mode == Chinese){stringAdd("x");      searchModeSwitch = 0;      if(!lastTimeInputPY.isEmpty()){lastTimeInputPY.append("x");}IMRefresh(); return true;} else return false;
-            case Qt::Key_C: if(Mode == Chinese){stringAdd("c");      searchModeSwitch = 0;      if(!lastTimeInputPY.isEmpty()){lastTimeInputPY.append("c");}IMRefresh(); return true;} else return false;
-            case Qt::Key_V: if(Mode == Chinese){stringAdd("v");      searchModeSwitch = 0;      if(!lastTimeInputPY.isEmpty()){lastTimeInputPY.append("v");}IMRefresh(); return true;} else return false;
-            case Qt::Key_B: if(Mode == Chinese){stringAdd("b");      searchModeSwitch = 0;      if(!lastTimeInputPY.isEmpty()){lastTimeInputPY.append("b");}IMRefresh(); return true;} else return false;
-            case Qt::Key_N: if(Mode == Chinese){stringAdd("n");      searchModeSwitch = 0;      if(!lastTimeInputPY.isEmpty()){lastTimeInputPY.append("n");}IMRefresh(); return true;} else return false;
-            case Qt::Key_M: if(Mode == Chinese){stringAdd("m");      searchModeSwitch = 0;      if(!lastTimeInputPY.isEmpty()){lastTimeInputPY.append("m");}IMRefresh(); return true;} else return false;
+            case Qt::Key_Q: if(Mode == Chinese){stringAdd("q");      searchModeSwitch = 0;      associationSwitch = 0;  if(!lastTimeInputPY.isEmpty()){lastTimeInputPY.append("q");} IMRefresh(); return true;} else return false;
+            case Qt::Key_W: if(Mode == Chinese){stringAdd("w");      searchModeSwitch = 0;      associationSwitch = 0;  if(!lastTimeInputPY.isEmpty()){lastTimeInputPY.append("w");}IMRefresh(); return true;} else return false;
+            case Qt::Key_E: if(Mode == Chinese){stringAdd("e");      searchModeSwitch = 0;      associationSwitch = 0;  if(!lastTimeInputPY.isEmpty()){lastTimeInputPY.append("e");}IMRefresh(); return true;} else return false;
+            case Qt::Key_R: if(Mode == Chinese){stringAdd("r");      searchModeSwitch = 0;      associationSwitch = 0;  if(!lastTimeInputPY.isEmpty()){lastTimeInputPY.append("r");}IMRefresh(); return true;} else return false;
+            case Qt::Key_T: if(Mode == Chinese){stringAdd("t");      searchModeSwitch = 0;      associationSwitch = 0;  if(!lastTimeInputPY.isEmpty()){lastTimeInputPY.append("t");}IMRefresh(); return true;} else return false;
+            case Qt::Key_Y: if(Mode == Chinese){stringAdd("y");      searchModeSwitch = 0;      associationSwitch = 0;  if(!lastTimeInputPY.isEmpty()){lastTimeInputPY.append("y");}IMRefresh(); return true;} else return false;
+            case Qt::Key_U: if(Mode == Chinese){stringAdd("u");      searchModeSwitch = 0;      associationSwitch = 0;  if(!lastTimeInputPY.isEmpty()){lastTimeInputPY.append("u");}IMRefresh(); return true;} else return false;
+            case Qt::Key_I: if(Mode == Chinese){stringAdd("i");      searchModeSwitch = 0;      associationSwitch = 0;  if(!lastTimeInputPY.isEmpty()){lastTimeInputPY.append("i");}IMRefresh(); return true;} else return false;
+            case Qt::Key_O: if(Mode == Chinese){stringAdd("o");      searchModeSwitch = 0;      associationSwitch = 0;  if(!lastTimeInputPY.isEmpty()){lastTimeInputPY.append("o");}IMRefresh(); return true;} else return false;
+            case Qt::Key_P: if(Mode == Chinese){stringAdd("p");      searchModeSwitch = 0;      associationSwitch = 0;  if(!lastTimeInputPY.isEmpty()){lastTimeInputPY.append("p");}IMRefresh(); return true;} else return false;
+            case Qt::Key_A: if(Mode == Chinese){stringAdd("a");      searchModeSwitch = 0;      associationSwitch = 0;  if(!lastTimeInputPY.isEmpty()){lastTimeInputPY.append("a");}IMRefresh(); return true;} else return false;
+            case Qt::Key_S: if(Mode == Chinese){stringAdd("s");      searchModeSwitch = 0;      associationSwitch = 0;  if(!lastTimeInputPY.isEmpty()){lastTimeInputPY.append("s");}IMRefresh(); return true;} else return false;
+            case Qt::Key_D: if(Mode == Chinese){stringAdd("d");      searchModeSwitch = 0;      associationSwitch = 0;  if(!lastTimeInputPY.isEmpty()){lastTimeInputPY.append("d");}IMRefresh(); return true;} else return false;
+            case Qt::Key_F: if(Mode == Chinese){stringAdd("f");      searchModeSwitch = 0;      associationSwitch = 0;  if(!lastTimeInputPY.isEmpty()){lastTimeInputPY.append("f");}IMRefresh(); return true;} else return false;
+            case Qt::Key_G: if(Mode == Chinese){stringAdd("g");      searchModeSwitch = 0;      associationSwitch = 0;  if(!lastTimeInputPY.isEmpty()){lastTimeInputPY.append("g");}IMRefresh(); return true;} else return false;
+            case Qt::Key_H: if(Mode == Chinese){stringAdd("h");      searchModeSwitch = 0;      associationSwitch = 0;  if(!lastTimeInputPY.isEmpty()){lastTimeInputPY.append("h");}IMRefresh(); return true;} else return false;
+            case Qt::Key_J: if(Mode == Chinese){stringAdd("j");      searchModeSwitch = 0;      associationSwitch = 0;  if(!lastTimeInputPY.isEmpty()){lastTimeInputPY.append("j");}IMRefresh(); return true;} else return false;
+            case Qt::Key_K: if(Mode == Chinese){stringAdd("k");      searchModeSwitch = 0;      associationSwitch = 0;  if(!lastTimeInputPY.isEmpty()){lastTimeInputPY.append("k");}IMRefresh(); return true;} else return false;
+            case Qt::Key_L: if(Mode == Chinese){stringAdd("l");      searchModeSwitch = 0;      associationSwitch = 0;  if(!lastTimeInputPY.isEmpty()){lastTimeInputPY.append("l");}IMRefresh(); return true;} else return false;
+            case Qt::Key_Z: if(Mode == Chinese){stringAdd("z");      searchModeSwitch = 0;      associationSwitch = 0;  if(!lastTimeInputPY.isEmpty()){lastTimeInputPY.append("z");}IMRefresh(); return true;} else return false;
+            case Qt::Key_X: if(Mode == Chinese){stringAdd("x");      searchModeSwitch = 0;      associationSwitch = 0;  if(!lastTimeInputPY.isEmpty()){lastTimeInputPY.append("x");}IMRefresh(); return true;} else return false;
+            case Qt::Key_C: if(Mode == Chinese){stringAdd("c");      searchModeSwitch = 0;      associationSwitch = 0;  if(!lastTimeInputPY.isEmpty()){lastTimeInputPY.append("c");}IMRefresh(); return true;} else return false;
+            case Qt::Key_V: if(Mode == Chinese){stringAdd("v");      searchModeSwitch = 0;      associationSwitch = 0;  if(!lastTimeInputPY.isEmpty()){lastTimeInputPY.append("v");}IMRefresh(); return true;} else return false;
+            case Qt::Key_B: if(Mode == Chinese){stringAdd("b");      searchModeSwitch = 0;      associationSwitch = 0;  if(!lastTimeInputPY.isEmpty()){lastTimeInputPY.append("b");}IMRefresh(); return true;} else return false;
+            case Qt::Key_N: if(Mode == Chinese){stringAdd("n");      searchModeSwitch = 0;      associationSwitch = 0;  if(!lastTimeInputPY.isEmpty()){lastTimeInputPY.append("n");}IMRefresh(); return true;} else return false;
+            case Qt::Key_M: if(Mode == Chinese){stringAdd("m");      searchModeSwitch = 0;      associationSwitch = 0;  if(!lastTimeInputPY.isEmpty()){lastTimeInputPY.append("m");}IMRefresh(); return true;} else return false;
             case Qt::Key_Shift:
                 if(Mode == Chinese)
                 {
@@ -98,7 +100,7 @@ bool MainWindow::eventFilter(QObject *watched, QEvent *event)
             case Qt::Key_Backspace:     //糟糕的代码。第一部分可以returnfalse
                 if(!lastTimeInputPY.isEmpty())
                     lastTimeInputPY.remove(lastTimeInputPY.length()-1,1);
-                if(ui->inputDisplayLabel->text().isEmpty() == true )
+                if(ui->inputDisplayLabel->text().isEmpty() == true && associationSwitch == 0)
                 {
                     cursor = ui->textEdit->textCursor();
                     if(cursor.hasSelection())
@@ -107,10 +109,28 @@ bool MainWindow::eventFilter(QObject *watched, QEvent *event)
                 }
                 else
                 {
-                    backspace();        //这部分操作较为繁琐且涉及到对private部分的操作，故单独列为函数
-                    stringDelete();     //移除待查拼音的末尾字符
-                    IMRefresh();
-                    showChinese();
+                    if(associationSwitch == 0)
+                    {
+                        backspace();        //这部分操作较为繁琐且涉及到对private部分的操作，故单独列为函数
+                        stringDelete();     //移除待查拼音的末尾字符
+                        if(ui->inputDisplayLabel->text().isEmpty())
+                        {
+                            lastTimeInputChinese.clear();
+                            lastTimeInputPY.clear();
+                            inputingNotFinishedSwitch = 0;
+                        }           //在自定义词库的过程中，用户在修改拼音时删除了所有拼音，则在这一次输入时不会启动自定义词库功能。
+                        IMRefresh();
+                        showChinese();
+                    }
+                    else
+                    {
+                        chooseChineseStrList.clear();
+                        choosePYList.clear();
+                        chooseFrequencyList.clear();
+                        associationSwitch = 0;
+                        IMRefresh();
+                        showChinese();
+                    }
                 }              
 
                 if(ui->inputDisplayLabel->text().isEmpty() == true)
@@ -168,60 +188,60 @@ bool MainWindow::eventFilter(QObject *watched, QEvent *event)
             case Qt::Key_1:
             {
                 //this part can be set as a function!
-                if(ui->inputDisplayLabel->text().isEmpty() == false && !ui->wordLabel_1->text().isEmpty())
+                if((ui->inputDisplayLabel->text().isEmpty() == false && !ui->wordLabel_1->text().isEmpty()) || (associationSwitch == 1 && !ui->wordLabel_1->text().isEmpty()))
                 {
                     inputChinese(5);
                     return true;
                 }
-                else if(ui->wordLabel_1->text().isEmpty() && !ui->inputDisplayLabel->text().isEmpty())
+                else if((ui->wordLabel_1->text().isEmpty() && !ui->inputDisplayLabel->text().isEmpty()) || (associationSwitch == 1 && ui->wordLabel_1->text().isEmpty()))
                     return true;
                 else
                     return false;
             }
             case Qt::Key_2:
             {
-                if(ui->inputDisplayLabel->text().isEmpty() == false && !ui->wordLabel_2->text().isEmpty())
+                if((ui->inputDisplayLabel->text().isEmpty() == false && !ui->wordLabel_2->text().isEmpty()) || (associationSwitch == 1 && !ui->wordLabel_2->text().isEmpty()))
                 {                    
                     inputChinese(4);
                     return true;
                 }
-                else if(ui->wordLabel_2->text().isEmpty() && !ui->inputDisplayLabel->text().isEmpty())
+                else if((ui->wordLabel_2->text().isEmpty() && !ui->inputDisplayLabel->text().isEmpty()) || (associationSwitch == 1 && ui->wordLabel_2->text().isEmpty()))
                     return true;
                 else
                     return false;
             }
             case Qt::Key_3:
             {
-                if(ui->inputDisplayLabel->text().isEmpty() == false && !ui->wordLabel_3->text().isEmpty())
+                if((ui->inputDisplayLabel->text().isEmpty() == false && !ui->wordLabel_3->text().isEmpty()) || (associationSwitch == 1 && !ui->wordLabel_3->text().isEmpty()))
                 {
                     inputChinese(3);
                     return true;
                 }
-                else if(ui->wordLabel_3->text().isEmpty() && !ui->inputDisplayLabel->text().isEmpty())
+                else if((ui->wordLabel_3->text().isEmpty() && !ui->inputDisplayLabel->text().isEmpty()) || (associationSwitch == 1 && ui->wordLabel_3->text().isEmpty()))
                     return true;
                 else
                     return false;
             }
             case Qt::Key_4:
             {
-                if(ui->inputDisplayLabel->text().isEmpty() == false && !ui->wordLabel_4->text().isEmpty())
+                if((ui->inputDisplayLabel->text().isEmpty() == false && !ui->wordLabel_4->text().isEmpty()) || (associationSwitch == 1 && !ui->wordLabel_4->text().isEmpty()))
                 {
                     inputChinese(2);
                     return true;
                 }
-                else if(ui->wordLabel_4->text().isEmpty() && !ui->inputDisplayLabel->text().isEmpty())
+                else if((ui->wordLabel_4->text().isEmpty() && !ui->inputDisplayLabel->text().isEmpty()) || (associationSwitch == 1 && ui->wordLabel_4->text().isEmpty()))
                     return true;
                 else
                     return false;
             }
             case Qt::Key_5:
             {
-                if(ui->inputDisplayLabel->text().isEmpty() == false && !ui->wordLabel_5->text().isEmpty())
+                if((ui->inputDisplayLabel->text().isEmpty() == false && !ui->wordLabel_5->text().isEmpty()) || (associationSwitch == 1 && !ui->wordLabel_5->text().isEmpty()))
                 {
                     inputChinese(1);
                     return true;
                 }
-                else if(ui->wordLabel_5->text().isEmpty() && !ui->inputDisplayLabel->text().isEmpty())
+                else if((ui->wordLabel_5->text().isEmpty() && !ui->inputDisplayLabel->text().isEmpty()) || (associationSwitch == 1 && ui->wordLabel_5->text().isEmpty()))
                     return true;
                 else
                     return false;
@@ -508,7 +528,7 @@ void MainWindow::IMRefresh(void)
         }
     }
     showChinese();
-    qDebug()<<"hi!";
+    //qDebug()<<"hi!";
     qDebug()<<chooseFrequencyList;
 }
 
@@ -583,138 +603,159 @@ void MainWindow::inputChinese(int i)
     }
     //qDebug()<<"tempchisese is "<<tempChinese;
 
-    while(j++ <= choosePYList.at(checkPage*5 - i).length())//从待查全拼strList删去已选择的拼音
-        strList.removeFirst();
-    str = strList.join("");
+    if(associationSwitch == 0)
+    {
+        while(j++ <= choosePYList.at(checkPage*5 - i).length())//从待查全拼strList删去已选择的拼音
+            strList.removeFirst();
+        str = strList.join("");
+    }
 
     /***********10.28新增部分，修改词频计数*********************/
-    int tempFrequency = chooseFrequencyList.at(checkPage*5 - i) + 1;
-    QString search_level = QString::number(tempFrequency, 10);
-    QString search_chinese = chooseChineseStrList.at(checkPage*5 - i);
-    QString search_pinyin = choosePYList.at(checkPage*5 - i);
-    QString search;
-
-    switch (search_pinyin.at(0).unicode())
+    if(associationSwitch == 0)
     {
-    case 'q':
-        search = "UPDATE PYlistq SET level = " + search_level + " where hanzi = '"+ (QString)search_chinese + "' and py = '" + (QString)search_pinyin + "';";
-        break;
-    case 'w':
-        search = "UPDATE PYlistw SET level = " + search_level + " where hanzi = '"+ (QString)search_chinese + "' and py = '" + (QString)search_pinyin + "';";
-        break;
-    case 'e':
-        search = "UPDATE PYliste SET level = " + search_level + " where hanzi = '"+ (QString)search_chinese + "' and py = '" + (QString)search_pinyin + "';";
-        break;
-    case 'r':
-        search = "UPDATE PYlistr SET level = " + search_level + " where hanzi = '"+ (QString)search_chinese + "' and py = '" + (QString)search_pinyin + "';";
-        break;
-    case 't':
-        search = "UPDATE PYlistt SET level = " + search_level + " where hanzi = '"+ (QString)search_chinese + "' and py = '" + (QString)search_pinyin + "';";
-        break;
-    case 'y':
-        search = "UPDATE PYlisty SET level = " + search_level + " where hanzi = '"+ (QString)search_chinese + "' and py = '" + (QString)search_pinyin + "';";
-        break;
-    case 'u':
-        search = "UPDATE PYlistu SET level = " + search_level + " where hanzi = '"+ (QString)search_chinese + "' and py = '" + (QString)search_pinyin + "';";
-        break;
-    case 'i':
-        search = "UPDATE PYlisti SET level = " + search_level + " where hanzi = '"+ (QString)search_chinese + "' and py = '" + (QString)search_pinyin + "';";
-        break;
-    case 'o':
-        search = "UPDATE PYlisto SET level = " + search_level + " where hanzi = '"+ (QString)search_chinese + "' and py = '" + (QString)search_pinyin + "';";
-        break;
-    case 'p':
-        search = "UPDATE PYlistp SET level = " + search_level + " where hanzi = '"+ (QString)search_chinese + "' and py = '" + (QString)search_pinyin + "';";
-        break;
-    case 'a':
-        search = "UPDATE PYlista SET level = " + search_level + " where hanzi = '"+ (QString)search_chinese + "' and py = '" + (QString)search_pinyin + "';";
-        break;
-    case 's':
-        search = "UPDATE PYlists SET level = " + search_level + " where hanzi = '"+ (QString)search_chinese + "' and py = '" + (QString)search_pinyin + "';";
-        break;
-    case 'd':
-        search = "UPDATE PYlistd SET level = " + search_level + " where hanzi = '"+ (QString)search_chinese + "' and py = '" + (QString)search_pinyin + "';";
-        break;
-    case 'f':
-        search = "UPDATE PYlistf SET level = " + search_level + " where hanzi = '"+ (QString)search_chinese + "' and py = '" + (QString)search_pinyin + "';";
-        break;
-    case 'g':
-        search = "UPDATE PYlistg SET level = " + search_level + " where hanzi = '"+ (QString)search_chinese + "' and py = '" + (QString)search_pinyin + "';";
-        break;
-    case 'h':
-        search = "UPDATE PYlisth SET level = " + search_level + " where hanzi = '"+ (QString)search_chinese + "' and py = '" + (QString)search_pinyin + "';";
-        break;
-    case 'j':
-        search = "UPDATE PYlistj SET level = " + search_level + " where hanzi = '"+ (QString)search_chinese + "' and py = '" + (QString)search_pinyin + "';";
-        break;
-    case 'k':
-        search = "UPDATE PYlistk SET level = " + search_level + " where hanzi = '"+ (QString)search_chinese + "' and py = '" + (QString)search_pinyin + "';";
-        break;
-    case 'l':
-        search = "UPDATE PYlistl SET level = " + search_level + " where hanzi = '"+ (QString)search_chinese + "' and py = '" + (QString)search_pinyin + "';";
-        break;
-    case 'z':
-        search = "UPDATE PYlistz SET level = " + search_level + " where hanzi = '"+ (QString)search_chinese + "' and py = '" + (QString)search_pinyin + "';";
-        break;
-    case 'x':
-        search = "UPDATE PYlistx SET level = " + search_level + " where hanzi = '"+ (QString)search_chinese + "' and py = '" + (QString)search_pinyin + "';";
-        break;
-    case 'c':
-        search = "UPDATE PYlistc SET level = " + search_level + " where hanzi = '"+ (QString)search_chinese + "' and py = '" + (QString)search_pinyin + "';";
-        break;
-    case 'v':
-        search = "UPDATE PYlistv SET level = " + search_level + " where hanzi = '"+ (QString)search_chinese + "' and py = '" + (QString)search_pinyin + "';";
-        break;
-    case 'b':
-        search = "UPDATE PYlistb SET level = " + search_level + " where hanzi = '"+ (QString)search_chinese + "' and py = '" + (QString)search_pinyin + "';";
-        break;
-    case 'n':
-        search = "UPDATE PYlistn SET level = " + search_level + " where hanzi = '"+ (QString)search_chinese + "' and py = '" + (QString)search_pinyin + "';";
-        break;
-    case 'm':
-        search = "UPDATE PYlistm SET level = " + search_level + " where hanzi = '"+ (QString)search_chinese + "' and py = '" + (QString)search_pinyin + "';";
-        break;
-    default:
-        break;
-    }
-    qDebug()<<search;
-    /************************************************/
+        int tempFrequency = chooseFrequencyList.at(checkPage*5 - i) + 1;
+        QString search_level = QString::number(tempFrequency, 10);
+        QString search_chinese = chooseChineseStrList.at(checkPage*5 - i);
+        QString search_pinyin = choosePYList.at(checkPage*5 - i);
+        QString search;
 
+        switch (search_pinyin.at(0).unicode())
+        {
+        case 'q':
+            search = "UPDATE PYlistq SET level = " + search_level + " where hanzi = '"+ (QString)search_chinese + "' and py = '" + (QString)search_pinyin + "';";
+            break;
+        case 'w':
+            search = "UPDATE PYlistw SET level = " + search_level + " where hanzi = '"+ (QString)search_chinese + "' and py = '" + (QString)search_pinyin + "';";
+            break;
+        case 'e':
+            search = "UPDATE PYliste SET level = " + search_level + " where hanzi = '"+ (QString)search_chinese + "' and py = '" + (QString)search_pinyin + "';";
+            break;
+        case 'r':
+            search = "UPDATE PYlistr SET level = " + search_level + " where hanzi = '"+ (QString)search_chinese + "' and py = '" + (QString)search_pinyin + "';";
+            break;
+        case 't':
+            search = "UPDATE PYlistt SET level = " + search_level + " where hanzi = '"+ (QString)search_chinese + "' and py = '" + (QString)search_pinyin + "';";
+            break;
+        case 'y':
+            search = "UPDATE PYlisty SET level = " + search_level + " where hanzi = '"+ (QString)search_chinese + "' and py = '" + (QString)search_pinyin + "';";
+            break;
+        case 'u':
+            search = "UPDATE PYlistu SET level = " + search_level + " where hanzi = '"+ (QString)search_chinese + "' and py = '" + (QString)search_pinyin + "';";
+            break;
+        case 'i':
+            search = "UPDATE PYlisti SET level = " + search_level + " where hanzi = '"+ (QString)search_chinese + "' and py = '" + (QString)search_pinyin + "';";
+            break;
+        case 'o':
+            search = "UPDATE PYlisto SET level = " + search_level + " where hanzi = '"+ (QString)search_chinese + "' and py = '" + (QString)search_pinyin + "';";
+            break;
+        case 'p':
+            search = "UPDATE PYlistp SET level = " + search_level + " where hanzi = '"+ (QString)search_chinese + "' and py = '" + (QString)search_pinyin + "';";
+            break;
+        case 'a':
+            search = "UPDATE PYlista SET level = " + search_level + " where hanzi = '"+ (QString)search_chinese + "' and py = '" + (QString)search_pinyin + "';";
+            break;
+        case 's':
+            search = "UPDATE PYlists SET level = " + search_level + " where hanzi = '"+ (QString)search_chinese + "' and py = '" + (QString)search_pinyin + "';";
+            break;
+        case 'd':
+            search = "UPDATE PYlistd SET level = " + search_level + " where hanzi = '"+ (QString)search_chinese + "' and py = '" + (QString)search_pinyin + "';";
+            break;
+        case 'f':
+            search = "UPDATE PYlistf SET level = " + search_level + " where hanzi = '"+ (QString)search_chinese + "' and py = '" + (QString)search_pinyin + "';";
+            break;
+        case 'g':
+            search = "UPDATE PYlistg SET level = " + search_level + " where hanzi = '"+ (QString)search_chinese + "' and py = '" + (QString)search_pinyin + "';";
+            break;
+        case 'h':
+            search = "UPDATE PYlisth SET level = " + search_level + " where hanzi = '"+ (QString)search_chinese + "' and py = '" + (QString)search_pinyin + "';";
+            break;
+        case 'j':
+            search = "UPDATE PYlistj SET level = " + search_level + " where hanzi = '"+ (QString)search_chinese + "' and py = '" + (QString)search_pinyin + "';";
+            break;
+        case 'k':
+            search = "UPDATE PYlistk SET level = " + search_level + " where hanzi = '"+ (QString)search_chinese + "' and py = '" + (QString)search_pinyin + "';";
+            break;
+        case 'l':
+            search = "UPDATE PYlistl SET level = " + search_level + " where hanzi = '"+ (QString)search_chinese + "' and py = '" + (QString)search_pinyin + "';";
+            break;
+        case 'z':
+            search = "UPDATE PYlistz SET level = " + search_level + " where hanzi = '"+ (QString)search_chinese + "' and py = '" + (QString)search_pinyin + "';";
+            break;
+        case 'x':
+            search = "UPDATE PYlistx SET level = " + search_level + " where hanzi = '"+ (QString)search_chinese + "' and py = '" + (QString)search_pinyin + "';";
+            break;
+        case 'c':
+            search = "UPDATE PYlistc SET level = " + search_level + " where hanzi = '"+ (QString)search_chinese + "' and py = '" + (QString)search_pinyin + "';";
+            break;
+        case 'v':
+            search = "UPDATE PYlistv SET level = " + search_level + " where hanzi = '"+ (QString)search_chinese + "' and py = '" + (QString)search_pinyin + "';";
+            break;
+        case 'b':
+            search = "UPDATE PYlistb SET level = " + search_level + " where hanzi = '"+ (QString)search_chinese + "' and py = '" + (QString)search_pinyin + "';";
+            break;
+        case 'n':
+            search = "UPDATE PYlistn SET level = " + search_level + " where hanzi = '"+ (QString)search_chinese + "' and py = '" + (QString)search_pinyin + "';";
+            break;
+        case 'm':
+            search = "UPDATE PYlistm SET level = " + search_level + " where hanzi = '"+ (QString)search_chinese + "' and py = '" + (QString)search_pinyin + "';";
+            break;
+        default:
+            break;
+        }
+        qDebug()<<search;
+    }
+    /************************************************/
 
     /*******************10.12************************/
     //以下部分在用户按下1~5键选择了汉字后唤起，用于从备选拼音和备选汉字列表中删去应该剔除的元素
-    QString deletePy = choosePYList.at(checkPage*5 - i);
-    //qDebug()<<"removing : "<<deletePy;      //这是用户选择的汉字的全拼，实际删除中还需要删除该全拼的各个子音节所对应的汉字
-    QString deletePy_firstTwoCharacter;     //由于本字库除了元音字（如啊）之外至少要两个字母才能出字，故删去拼音时还要考虑其首二字母
-
-    deletePy_firstTwoCharacter.append(deletePy.at(0));
-    if(deletePy.length() >= 2)
-        deletePy_firstTwoCharacter.append(deletePy.at(1));
-    if(deletePy_firstTwoCharacter.at(0) == 'm' || deletePy_firstTwoCharacter.at(0) == 'n')
-        deletePy_firstTwoCharacter.remove(1,1); //解决m和n的问题。由于字库中唯二的非元音却可以出字的字母是mn，故需要单独处理
-
-    //qDebug()<<"first two char is "<<deletePy_firstTwoCharacter;
-
-    int remove_last= (choosePYList.lastIndexOf(deletePy) >= choosePYList.lastIndexOf(deletePy_firstTwoCharacter))? choosePYList.lastIndexOf(deletePy):choosePYList.lastIndexOf(deletePy_firstTwoCharacter);
-    //qDebug()<<"remove limit: "<<remove_last <<"as total is "<<choosePYList.length();
-
-    //以上部分，程序寻找用户输入汉字的全拼或首二字母的最后索引，取二者最大值m作为删除的上限，即删除备选拼音、汉字列表的第1~m个。
-    for(;remove_last >= 0; remove_last--)
+    if(associationSwitch == 0)
     {
-        //qDebug()<<"removed: "<<chooseChineseStrList.at(0);
-        choosePYList.removeFirst();
-        chooseChineseStrList.removeFirst();
-        chooseFrequencyList.removeFirst();
-        //qDebug()<<"Py remian length:"<<choosePYList.length()<<"Chinese remain length:"<<chooseChineseStrList.length()<<" and mark is "<<remove_last;
+        QString deletePy = choosePYList.at(checkPage*5 - i);
+        //qDebug()<<"removing : "<<deletePy;      //这是用户选择的汉字的全拼，实际删除中还需要删除该全拼的各个子音节所对应的汉字
+        QString deletePy_firstTwoCharacter;     //由于本字库除了元音字（如啊）之外至少要两个字母才能出字，故删去拼音时还要考虑其首二字母
+
+        deletePy_firstTwoCharacter.append(deletePy.at(0));
+        if(deletePy.length() >= 2)
+            deletePy_firstTwoCharacter.append(deletePy.at(1));
+        if(deletePy_firstTwoCharacter.at(0) == 'm' || deletePy_firstTwoCharacter.at(0) == 'n')
+            deletePy_firstTwoCharacter.remove(1,1); //解决m和n的问题。由于字库中唯二的非元音却可以出字的字母是mn，故需要单独处理
+
+        //qDebug()<<"first two char is "<<deletePy_firstTwoCharacter;
+
+        int remove_last= (choosePYList.lastIndexOf(deletePy) >= choosePYList.lastIndexOf(deletePy_firstTwoCharacter))? choosePYList.lastIndexOf(deletePy):choosePYList.lastIndexOf(deletePy_firstTwoCharacter);
+        //qDebug()<<"remove limit: "<<remove_last <<"as total is "<<choosePYList.length();
+
+        //以上部分，程序寻找用户输入汉字的全拼或首二字母的最后索引，取二者最大值m作为删除的上限，即删除备选拼音、汉字列表的第1~m个。
+        for(;remove_last >= 0; remove_last--)
+        {
+            //qDebug()<<"removed: "<<chooseChineseStrList.at(0);
+            choosePYList.removeFirst();
+            chooseChineseStrList.removeFirst();
+            chooseFrequencyList.removeFirst();
+            //qDebug()<<"Py remian length:"<<choosePYList.length()<<"Chinese remain length:"<<chooseChineseStrList.length()<<" and mark is "<<remove_last;
+        }
+        //执行删除操作
+        //qDebug()<<"now remains:"<<chooseChineseStrList;
+        checkPage = 1;
+        showChinese();
+        ui->inputDisplayLabel->setText(str);
     }
-    //执行删除操作
-    //qDebug()<<"now remains:"<<chooseChineseStrList;
-    checkPage = 1;
-    showChinese();
-    ui->inputDisplayLabel->setText(str);
+    else        //这次选择的是联想的词，待查拼音列表是空的（如果没出错的话），所以后面的步骤都不需要进行了，退出就好（如果后期要多次联想，可以从这里再修改）
+    {
+        chooseChineseStrList.clear();
+        choosePYList.clear();
+        chooseFrequencyList.clear();
+        /*****************************************
+        str.clear();
+        strList.clear();
+        **************这么清空应该没问题吧***********/
+        showChinese();
+        associationSwitch = 0;
 
+        return;
+    }
 
-    /**********************11.3**********************/
+    /**********************11.3自定义词库**********************/
     int index = 0;
     if(!str.isEmpty() && inputingNotFinishedSwitch == 0)          //这一次拼音输入了词库中没有的词，可能需要添加新词，记录下拼音和汉字
     {
@@ -722,33 +763,33 @@ void MainWindow::inputChinese(int i)
         lastTimeInputPY = tempPY;       //记录新词的全拼。当第一次判定为可能需要加新词时，此时tempPY保存的拼音即新词的拼音。
         lastTimeInputChinese.append(tempChinese);
     }
-    else if(!str.isEmpty() && inputingNotFinishedSwitch == 1)
+    else if(!str.isEmpty() && inputingNotFinishedSwitch == 1)     //用户的选词输入还在继续，继续记录刚刚用户选择的字词
     {
-        qDebug()<<"previous lastTime is "<<lastTimeInputChinese;
+        //qDebug()<<"previous lastTime is "<<lastTimeInputChinese;
         lastTimeInputChinese.append(tempChinese);
-        qDebug()<<"now is "<<lastTimeInputChinese;
+        //qDebug()<<"now is "<<lastTimeInputChinese;
     }
     else if(str.isEmpty())
     {
-        if(inputingNotFinishedSwitch == 1)//备选拼音列表不再有词且开关被打开过，即此时已完成新词的汉语录入。将新词存入新词链表
+        if(inputingNotFinishedSwitch == 1)//备选拼音列表不再有词且开关被打开过，即此时已完成新词的汉语录入。
         {
             lastTimeInputChinese.append(tempChinese);
             index = personalizeChineseList.indexOf(lastTimeInputChinese);
-            if(index == -1)
+            if(index == -1)         //如果这次输入的词汇并没有存在于新词列表中，那么需要往新词列表中新增本词，初始化对应的临时词频。
             {
                 personalizeChineseList.append(lastTimeInputChinese);
                 personalizePYList.append(lastTimeInputPY);
                 personalizeAppearenceList.append(1);
                 index = 0;
             }
-            else
+            else                    //如果这次输入的词汇在新词链表中存在，那么更新其临时词频
             {
-                qDebug()<<"previous appr is"<<personalizeAppearenceList.at(index);
+                //qDebug()<<"previous appr is"<<personalizeAppearenceList.at(index);
                 personalizeAppearenceList.replace(index,  personalizeAppearenceList.at(index) + 1);
-                qDebug()<<"now appr is"<<personalizeAppearenceList.at(index);
+                //qDebug()<<"now appr is"<<personalizeAppearenceList.at(index);
             }            
 
-            if(personalizeAppearenceList.at(index) >= 3)
+            if(personalizeAppearenceList.at(index) >= 3)        //当临时词频达到3，加入字库，从新词链表中删去。
             {
                 QString insertPY = personalizePYList.at(index);
                 QString insertChinese = personalizeChineseList.at(index);
@@ -839,7 +880,7 @@ void MainWindow::inputChinese(int i)
                     break;
                 }
                 qDebug()<<sql;
-
+                //在新词拼音、汉字、临时词频三个列表中删去记录
                 personalizePYList.removeAt(index);
                 personalizeChineseList.removeAt(index);
                 personalizeAppearenceList.removeAt(index);
@@ -848,14 +889,151 @@ void MainWindow::inputChinese(int i)
             qDebug()<<"adding word:"<<lastTimeInputChinese<<"which pinyin is "<<lastTimeInputPY;
             lastTimeInputChinese.clear();
             lastTimeInputPY.clear();
-
         }
-        else    //一次到位，输入的词是词库有的词
+        else    //备选拼音列表不再有词且开关仍然关闭，说明这次输入一次到位，输入的词是词库有的词。故不必添加新词，启动联想功能
         {
+            qDebug()<<"associtation start!";
+            association(tempChinese, tempPY);
         }
     }
     /*************************************************/
+    if(associationSwitch == 0)
+        IMRefresh();
 
+    qDebug()<<"chooseChinese finished! now associationSwitch is :"<<associationSwitch;
+}
 
-    IMRefresh();
+void MainWindow::association(QString targetChinese, QString targetPY)
+{
+     associationSwitch = 1;
+     QString sql;
+     switch (targetPY.at(0).unicode()) {
+     case 'q':
+         sql = "SELECT * FROM PYlistq WHERE hanzi LIKE '" + targetChinese +"%' ORDER BY level DESC;";
+         break;
+     case 'w':
+         sql = "SELECT * FROM PYlistw WHERE hanzi LIKE '" + targetChinese +"%' ORDER BY level DESC;";
+         break;
+     case 'e':
+         sql = "SELECT * FROM PYliste WHERE hanzi LIKE '" + targetChinese +"%' ORDER BY level DESC;";
+         break;
+     case 'r':
+         sql = "SELECT * FROM PYlistr WHERE hanzi LIKE '" + targetChinese +"%' ORDER BY level DESC;";
+         break;
+     case 't':
+         sql = "SELECT * FROM PYlistt WHERE hanzi LIKE '" + targetChinese +"%' ORDER BY level DESC;";
+         break;
+     case 'y':
+         sql = "SELECT * FROM PYlisty WHERE hanzi LIKE '" + targetChinese +"%' ORDER BY level DESC;";
+         break;
+     case 'u':
+         sql = "SELECT * FROM PYlistu WHERE hanzi LIKE '" + targetChinese +"%' ORDER BY level DESC;";
+         break;
+     case 'i':
+         sql = "SELECT * FROM PYlisti WHERE hanzi LIKE '" + targetChinese +"%' ORDER BY level DESC;";
+         break;
+     case 'o':
+         sql = "SELECT * FROM PYlisto WHERE hanzi LIKE '" + targetChinese +"%' ORDER BY level DESC;";
+         break;
+     case 'p':
+         sql = "SELECT * FROM PYlistp WHERE hanzi LIKE '" + targetChinese +"%' ORDER BY level DESC;";
+         break;
+     case 'a':
+         sql = "SELECT * FROM PYlista WHERE hanzi LIKE '" + targetChinese +"%' ORDER BY level DESC;";
+         break;
+     case 's':
+         sql = "SELECT * FROM PYlists WHERE hanzi LIKE '" + targetChinese +"%' ORDER BY level DESC;";
+         break;
+     case 'd':
+         sql = "SELECT * FROM PYlistd WHERE hanzi LIKE '" + targetChinese +"%' ORDER BY level DESC;";
+         break;
+     case 'f':
+         sql = "SELECT * FROM PYlistf WHERE hanzi LIKE '" + targetChinese +"%' ORDER BY level DESC;";
+         break;
+     case 'g':
+         sql = "SELECT * FROM PYlistg WHERE hanzi LIKE '" + targetChinese +"%' ORDER BY level DESC;";
+         break;
+     case 'h':
+         sql = "SELECT * FROM PYlisth WHERE hanzi LIKE '" + targetChinese +"%' ORDER BY level DESC;";
+         break;
+     case 'j':
+         sql = "SELECT * FROM PYlistj WHERE hanzi LIKE '" + targetChinese +"%' ORDER BY level DESC;";
+         break;
+     case 'k':
+         sql = "SELECT * FROM PYlistk WHERE hanzi LIKE '" + targetChinese +"%' ORDER BY level DESC;";
+         break;
+     case 'l':
+         sql = "SELECT * FROM PYlistl WHERE hanzi LIKE '" + targetChinese +"%' ORDER BY level DESC;";
+         break;
+     case 'z':
+         sql = "SELECT * FROM PYlistz WHERE hanzi LIKE '" + targetChinese +"%' ORDER BY level DESC;";
+         break;
+     case 'x':
+         sql = "SELECT * FROM PYlistx WHERE hanzi LIKE '" + targetChinese +"%' ORDER BY level DESC;";
+         break;
+     case 'c':
+         sql = "SELECT * FROM PYlistc WHERE hanzi LIKE '" + targetChinese +"%' ORDER BY level DESC;";
+         break;
+     case 'v':
+         sql = "SELECT * FROM PYlistv WHERE hanzi LIKE '" + targetChinese +"%' ORDER BY level DESC;";
+         break;
+     case 'b':
+         sql = "SELECT * FROM PYlistb WHERE hanzi LIKE '" + targetChinese +"%' ORDER BY level DESC;";
+         break;
+     case 'n':
+         sql = "SELECT * FROM PYlistn WHERE hanzi LIKE '" + targetChinese +"%' ORDER BY level DESC;";
+         break;
+     case 'm':
+         sql = "SELECT * FROM PYlistm WHERE hanzi LIKE '" + targetChinese +"%' ORDER BY level DESC;";
+         break;
+     default:
+         break;
+     }
+     qDebug()<<sql;
+
+     chooseChineseStrList.clear();
+     choosePYList.clear();
+     chooseFrequencyList.clear();
+     QString temp1;
+     QString temp2;
+     //int tempFrequency;
+     int i = 0; int found_mark = 0;
+
+     query.exec(sql);
+     while(query.next())
+     {         
+         temp1 = query.value(0).toString();
+         temp2 = query.value(1).toString();
+         //tempFrequency = query.value(2).toInt();
+         if(temp1 != targetChinese)     //除去这个词本身
+         {
+             found_mark = 1;
+             QString removedWord = temp1;
+             removedWord.remove(0, targetChinese.length());         //联想模式中，查到联想词后需要去掉词头已经输入的部分
+             if(chooseChineseStrList.contains(removedWord) == false)       //如果没有出现重复字词，直接往备选字词表和备选拼音表中加入数据
+             {
+                 chooseChineseStrList.insert(i, removedWord);
+                 choosePYList.insert(i, temp2);
+                 //chooseFrequencyList.insert(i, tempFrequency);
+                 i++;
+             }
+             else     //如果出现了重复字词，也就是说需要更新这个词的拼音并同时修改这个词在备选字词表和备选拼音表的位置
+             {
+                 int removeIndex = chooseChineseStrList.indexOf(removedWord,0);//查找所需要删除的旧位置
+                 chooseChineseStrList.removeAt(removeIndex);
+                 choosePYList.removeAt(removeIndex);
+                 //chooseFrequencyList.removeAt(remove);
+                 chooseChineseStrList.insert(i, removedWord);
+                 choosePYList.insert(i, temp2);
+                 //chooseFrequencyList.insert(i, tempFrequency);
+                 i++;
+             }
+         }
+     }
+     if(found_mark == 0)
+        associationSwitch = 0;
+     qDebug()<<chooseChineseStrList;
+     qDebug()<<choosePYList;
+     checkPage = 1;
+     showChinese();
 }

@@ -27,17 +27,17 @@
   </property>
   <property name="windowIcon">
    <iconset>
-    <normaloff>F:/个性化/710枚白色图标/bdllq.ico</normaloff>F:/个性化/710枚白色图标/bdllq.ico</iconset>
+    <normaloff>F:/个性化/710枚白色图标/有道云笔记.ico</normaloff>F:/个性化/710枚白色图标/有道云笔记.ico</iconset>
   </property>
   <property name="styleSheet">
    <string notr="true">#MainWindow{
-	background:url(&quot;background.JPG&quot;);
+	background:url(&quot;12.JPG&quot;);
 }</string>
   </property>
   <widget class="QWidget" name="centralWidget">
    <property name="styleSheet">
     <string notr="true">#centralWidget{
-	background:url(&quot;background.jpg&quot;);
+	background:url(&quot;12.jpg&quot;);
 }</string>
    </property>
    <widget class="QLabel" name="inputDisplayLabel">
@@ -55,6 +55,7 @@
 	font-size:20px;
 	background:rgb(199, 199, 199, 40%);
 	border-radius:10px;
+	padding-left:30px;
 }</string>
     </property>
     <property name="text">
@@ -73,6 +74,10 @@
     <property name="styleSheet">
      <string notr="true">#textEdit{
 	border-radius:50px;
+	background:rgb(220,230,255,60%);
+	font-size:25px;
+	font-family:&quot;幼圆&quot;;
+	color:white;
 }</string>
     </property>
    </widget>
@@ -84,6 +89,12 @@
       <width>91</width>
       <height>61</height>
      </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Bauhaus 93</family>
+      <pointsize>12</pointsize>
+     </font>
     </property>
     <property name="styleSheet">
      <string notr="true">#statusLabel{
@@ -109,6 +120,12 @@
       <height>61</height>
      </rect>
     </property>
+    <property name="font">
+     <font>
+      <family>Bauhaus 93</family>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
     <property name="styleSheet">
      <string notr="true">#capsLock{
 	color:white;
@@ -133,12 +150,19 @@
       <height>41</height>
      </rect>
     </property>
+    <property name="font">
+     <font>
+      <family>幼圆</family>
+      <pointsize>-1</pointsize>
+     </font>
+    </property>
     <property name="styleSheet">
      <string notr="true">#wordLabel_1{
 	background:rgb(138,138,138,0%);
 	font-size:25px;
 	border-radius:5px;	
 	color:white;
+	font-family:&quot;幼圆&quot;;
 }</string>
     </property>
     <property name="text">
@@ -154,12 +178,19 @@
       <height>41</height>
      </rect>
     </property>
+    <property name="font">
+     <font>
+      <family>幼圆</family>
+      <pointsize>-1</pointsize>
+     </font>
+    </property>
     <property name="styleSheet">
      <string notr="true">#wordLabel_2{
 	background:rgb(138,138,138,0%);
 	font-size:25px;
 	border-radius:5px;	
 	color:white;
+	font-family:&quot;幼圆&quot;;
 }</string>
     </property>
     <property name="text">
@@ -175,12 +206,19 @@
       <height>41</height>
      </rect>
     </property>
+    <property name="font">
+     <font>
+      <family>幼圆</family>
+      <pointsize>-1</pointsize>
+     </font>
+    </property>
     <property name="styleSheet">
      <string notr="true">#wordLabel_3{
 	background:rgb(138,138,138,0%);
 	font-size:25px;
 	border-radius:5px;	
 	color:white;
+	font-family:&quot;幼圆&quot;;
 }</string>
     </property>
     <property name="text">
@@ -196,12 +234,19 @@
       <height>41</height>
      </rect>
     </property>
+    <property name="font">
+     <font>
+      <family>幼圆</family>
+      <pointsize>-1</pointsize>
+     </font>
+    </property>
     <property name="styleSheet">
      <string notr="true">#wordLabel_4{
 	background:rgb(138,138,138,0%);
 	font-size:25px;
 	border-radius:5px;	
 	color:white;
+	font-family:&quot;幼圆&quot;;
 }</string>
     </property>
     <property name="text">
@@ -217,11 +262,18 @@
       <height>41</height>
      </rect>
     </property>
+    <property name="font">
+     <font>
+      <family>幼圆</family>
+      <pointsize>-1</pointsize>
+     </font>
+    </property>
     <property name="styleSheet">
      <string notr="true">#wordLabel_5{
 	font-size:25px;
 	border-radius:5px;	
 	color:white;
+	font-family:&quot;幼圆&quot;;
 }</string>
     </property>
     <property name="text">

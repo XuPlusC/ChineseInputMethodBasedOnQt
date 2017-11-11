@@ -37,6 +37,7 @@ public:
     void clearButtonContent(void);
     void inputChinese(int i);   //用户按下1~5键选择字词后，将字词输出到文本框中
     void backspace(void);    //专门用于处理backSpace
+    void association(QString targetChinese, QString targetPY);
 
 private:
     Ui::MainWindow *ui;
@@ -60,6 +61,8 @@ private:
     QStringList personalizeChineseList;
     QStringList personalizePYList;
     QList<int> personalizeAppearenceList;
+    //11.10
+    int associationSwitch;      //当此开关被打开（1），说明进入了联想模式，按下按钮选择字词时不再删去拼音。
 
 protected:
     bool eventFilter(QObject *watched, QEvent *event);
