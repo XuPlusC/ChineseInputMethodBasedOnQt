@@ -1,0 +1,2 @@
+# ChineseInputMethodBasedOnQt
+开立医疗合作项目，基于Qt的中文输入法。开发周期太长所以有很多以前写的丑陋代码尚未修正。
